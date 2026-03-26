@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838c9340a68b46a4a47a45bea5c48433, type: 3}
+  m_Name: SFXSoundList
+  m_EditorClassIdentifier: Assembly-CSharp::_01_Work.KJY.Code.Sound.SoundListSO
+  soundType: 1
+  soundList:
+  - {fileID: 11400000, guid: 1c5172f63f9d78f4b859c3a3a91aea52, type: 2}
+  - {fileID: 11400000, guid: 248d2b12c6569994caae100118d64d11, type: 2}
+  - {fileID: 11400000, guid: e33fad77e42b8eb409b75cd1b01e9cd5, type: 2}
+  - {fileID: 11400000, guid: f863831de68eeb54daa6641be62a4f93, type: 2}
+  - {fileID: 11400000, guid: f548353227866a344a7c8ee024cb2d55, type: 2}
+  - {fileID: 11400000, guid: 9c12bc069258d424e8bbc225ac4937c3, type: 2}
