@@ -17,15 +17,12 @@ namespace Work.KJY.Code.Manager
 
         private void Start()
         {
-            // DataContainer에서 저장된 레벨을 불러옵니다.
             _curLevel = DataContainer.Instance.PlazaLevel;
 
-            // 모든 오브젝트를 비활성화하여 초기 상태를 깨끗하게 설정합니다.
             foreach (GameObject obj in LevelObjectDataManager.Instance.level1Objs) { obj.SetActive(false); }
             foreach (GameObject obj in LevelObjectDataManager.Instance.level2Objs) { obj.SetActive(false); }
             foreach (GameObject obj in LevelObjectDataManager.Instance.level3Objs) { obj.SetActive(false); }
 
-            // 불러온 레벨에 맞춰 오브젝트들을 누적하여 활성화합니다.
             if (_curLevel >= 2)
             {
                 foreach (GameObject obj in LevelObjectDataManager.Instance.level1Objs) { obj.SetActive(true); }
@@ -52,7 +49,6 @@ namespace Work.KJY.Code.Manager
             }
             
             _curLevel++;
-            // 레벨업 시 새로운 레벨을 DataContainer에 저장합니다.
             DataContainer.Instance.SetPlazaLevel(_curLevel);
 
             if (_curLevel == 2)

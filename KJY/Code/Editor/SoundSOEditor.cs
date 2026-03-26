@@ -11,7 +11,6 @@ namespace Work.KJY.Code.Editor
 
         void OnEnable()
         {
-            // Create a hidden, static AudioSource to play the preview if it doesn't exist
             if (_previewer == null)
             {
                 GameObject previewObject = new GameObject("AudioPreview");
@@ -46,7 +45,7 @@ namespace Work.KJY.Code.Editor
             {
                 _previewer.Stop();
                 _previewer.clip = clip;
-                _previewer.volume = ((SoundSO)target).volume; // Set volume from SoundSO
+                _previewer.volume = ((SoundSO)target).volume;
                 _previewer.Play();
             }
         }

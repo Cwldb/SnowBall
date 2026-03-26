@@ -20,11 +20,6 @@ namespace Work.KJY.Code.Manager
             fadeRect = fadeObject.rectTransform;
         }
 
-        private void Start()
-        {
-            //FadeOut();
-        }
-
         public void FadeIn(float duration = 1f, string sceneName = "")
         {
             Fade(Vector3.zero, duration, true, sceneName);

@@ -14,15 +14,15 @@ namespace Work.KJY.Code.Interacts
 
         private void Start()
         {
-            Bus<CharacterInteractionEvent>.Events += OnInteractShop;
+            Bus<CharacterInteractionEvent>.Events += OnInteractPlay;
         }
 
         private void OnDestroy()
         {
-            Bus<CharacterInteractionEvent>.Events -= OnInteractShop;
+            Bus<CharacterInteractionEvent>.Events -= OnInteractPlay;
         }
 
-        private void OnInteractShop(CharacterInteractionEvent evt)
+        private void OnInteractPlay(CharacterInteractionEvent evt)
         {
             if (_isInPlayer)
             {

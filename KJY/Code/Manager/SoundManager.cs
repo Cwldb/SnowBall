@@ -48,7 +48,6 @@ namespace Work.KJY.Code.Manager
             if (availableSource == null)
             {
                 Debug.LogWarning("[SoundManager] 모든 BGM용 AudioSource가 사용중입니다.");
-                // 새로운 AudioSource를 생성하여 풀에 추가
                 availableSource = Instantiate(bgmSourcePrefab, transform);
                 _bgmSources.Add(availableSource);
                 return;
@@ -86,37 +85,6 @@ namespace Work.KJY.Code.Manager
             }
 
             sfxSource.PlayOneShot(data.clip, data.volume);
-        }
-
-        public void Play3DSFX(string key, Vector3 position)
-        {
-            var data = sfxListSO.GetSoundData(key);
-            if (data == null || data.clip == null)
-            {
-                Debug.LogWarning($"[SoundManager] SFX '{key}'를 찾을 수 없습니다.");
-                return;
-            }
-
-            if (sfxSourcePrefab == null)
-            {
-                Debug.LogError("[SoundManager] SFX AudioSource Prefab이 설정되지 않았습니다!");
-                return;
-            }
-
-            AudioSource source = Instantiate(sfxSourcePrefab, position, Quaternion.identity);
-            source.clip = data.clip;
-            source.volume = data.volume;
-            source.loop = data.loop;
-
-            source.spatialBlend = 1f;
-            source.minDistance = data.min_ListenDistance;
-            source.maxDistance = data.max_ListenDistance;
-            source.rolloffMode = AudioRolloffMode.Logarithmic;
-
-            source.Play();
-
-            if (!data.loop)
-                Destroy(source.gameObject, data.clip.length);
         }
     }
 }
